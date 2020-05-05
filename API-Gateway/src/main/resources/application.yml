@@ -1,0 +1,23 @@
+server: 
+  port: 8555
+
+spring:
+  application:
+    name: Eureka-API
+
+
+zuul:
+  routes:
+    service-ping:
+      path: /ping/**
+      serviceId: Eureka-Ping
+#    service-talk:
+#      path: /talk/**
+#      service-id: Eureka-Talk   
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: ${EUREKA_URL:http://127.0.0.1:8787/eureka/}

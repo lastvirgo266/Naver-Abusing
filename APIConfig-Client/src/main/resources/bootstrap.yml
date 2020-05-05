@@ -1,0 +1,11 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    name: akmu #github에 있는 yml prefix를 써줌
+  profiles:
+    active: [dev, deploy]
+  cloud:
+    config:
+      uri: http://localhost:8080
